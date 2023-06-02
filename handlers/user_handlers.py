@@ -2,7 +2,7 @@ from aiogram import Router, F
 from aiogram.types import Message
 from aiogram.filters import Command, CommandStart, Text
 from lexicon.lexicon import LEXICON_RU
-from keyboards.keyboards import yes_no_kb, game_kb
+from keyboards.keyboards import yes_no_kb, game_kb, del_kb
 from services.services import get_bot_choice, get_winner
 
 router: Router = Router()
@@ -30,8 +30,8 @@ async def answer_yes(msg: Message):
 
 @router.message(Text(text=LEXICON_RU['no_button']))
 async def answer_no(msg: Message):
-    await msg.answer(text=LEXICON_RU['no'])
-
+    await msg.answer(text=LEXICON_RU['no'], reply_markup=del_kb) # после ответа
+                                                                # "Не хочу" удаляет клавиатуру
 
 @router.message(Text(text=[LEXICON_RU['rock'],
                      LEXICON_RU['scissors'],

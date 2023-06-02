@@ -1,4 +1,4 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from lexicon.lexicon import LEXICON_RU
 
@@ -24,3 +24,5 @@ game_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(
     keyboard =[[button_rock],
                [button_scissors],
                [button_paper]], resize_keyboard=True)
+
+del_kb: ReplyKeyboardRemove = ReplyKeyboardRemove() # удаляет клавиатуру
