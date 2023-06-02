@@ -25,4 +25,4 @@ game_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(
                [button_scissors],
                [button_paper]], resize_keyboard=True)
 
-del_kb: ReplyKeyboardRemove = ReplyKeyboardRemove() # удаляет клавиатуру
+del_kb: ReplyKeyboardRemove = ReplyKeyboardRemove()  # type: ignore # удаляет клавиатуру
